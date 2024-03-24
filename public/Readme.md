@@ -114,3 +114,11 @@ putting the trailer into store for dynamic change of videos background of each v
 for this we have destrcture movie id --> and then we pass this movie id to our custom hook and we use this movie id in the url to fetch movies trailer dynamically.
 
 so for getting all imges of all the movies --> we need a cdn url of the movie because all movies only have the query string . we need the constant url of all movies. so for htat we find it on goggle.
+
+you can fetch another movies data = trending, toprated, upcomgin etc
+by making a slice in the store and passing an action to store the api data in redux store.
+
+first make a custom hook with a changed name component and set the api according to trending, popular, upcoing etc. and dispatch an action which is specific to that movie niche.eg addTrendingMovies to store data.
+instead of making new slice for all kinds of movie api data (trending, popular etc) -> we can only make reducer which dispatch an action of addingTrendingMovies and exporting that action.
+aFter that add your custom hook logic inside browse page.
+and after thatgo to secondary component where we mapped all our moviesList container and provide that action which you have made in your movieSlice. and then the movies appear.
