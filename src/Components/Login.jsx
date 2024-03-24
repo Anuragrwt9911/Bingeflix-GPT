@@ -93,7 +93,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
+          // navigate("/browse");//it automatically navigate to browse page when auth state changed
           // ...
         })
         .catch((error) => {
