@@ -7,12 +7,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../utils/userSlice";
 import { addUser } from "../utils/userSlice";
 import { LOGO } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/gptSlice";
+
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   //updating the photo when sign in
   const user = useSelector((store) => store.user);
+
+  const handleGptSearchClick = () => {
+    dispatch(toggleGptSearchView());
+  };
 
   const handleSignOut = () => {
     signOut(auth)
@@ -49,16 +55,37 @@ const Header = () => {
     return () => unsubscribe(); //unscubscibe our event listener
   }, []);
   return (
-    <div className="p-2 m-2 bg-gradient-to-b from-black w-screen flex justify-between  items-center">
-      <img className="h-[100px] object-cover" src={LOGO} alt="logo" />
+    <div className="absolute z-10 px-6   bg-gradient-to-b from-black w-screen flex justify-between  items-center">
+      <img className="h-[70px] object-cover" src={LOGO} alt="logo" />
       {/**this will only be shown when user logged in */}
       {user && (
-        <div className="cursor-pointer p-4 mr-2">
+        <div className="cursor-pointer flex w-screen items-center justify-end p-2 mr-2">
+          <ul className="flex text-white mr-8 max-w-full justify-between items-center text-md  ">
+            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">Home</li>
+            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
+              TV shows
+            </li>
+            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
+              Originals
+            </li>
+            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
+              My List
+            </li>
+            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
+              Recently Added
+            </li>
+          </ul>
+          <button
+            onClick={() => handleGptSearchClick()}
+            className="rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-semibold mr-6"
+          >
+            GPT Search
+          </button>
           <p className="text-white text-lg font-bold ">{user?.displayName}</p>
-          <img className="size-10  " src={user?.photoURL} />
+          <img className="size-10 mr-2 " src={user?.photoURL} />
           <button
             onClick={() => handleSignOut()}
-            className="my-2 rounded-lg text-white bg-red-500 hover:bg-red-600 text-lg px-2 py-1 font-bold"
+            className=" rounded-lg text-white bg-red-500 hover:bg-red-600  px-3 py-2 font-semibold"
           >
             Sign Out
           </button>
