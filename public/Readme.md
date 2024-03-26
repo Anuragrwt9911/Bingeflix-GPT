@@ -122,3 +122,8 @@ first make a custom hook with a changed name component and set the api according
 instead of making new slice for all kinds of movie api data (trending, popular etc) -> we can only make reducer which dispatch an action of addingTrendingMovies and exporting that action.
 aFter that add your custom hook logic inside browse page.
 and after thatgo to secondary component where we mapped all our moviesList container and provide that action which you have made in your movieSlice. and then the movies appear.
+
+//Additional feature - gpt integration in netflix
+//Bonus feature --> creating language constants for convertng out whole page text from english to hindi.
+we can achieve this by creating a constant file and put all those languages we want in our page. and then put wherever we want after then we make a toggle functionality to toggle our desired langugage to the specified area where we have put the lang constant.
+//for togglling to another language we have to create a new slice because we have to change the language when the option is changed.

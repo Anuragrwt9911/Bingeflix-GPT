@@ -6,8 +6,9 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../utils/userSlice";
 import { addUser } from "../utils/userSlice";
-import { LOGO } from "../utils/constants";
+import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -54,12 +55,33 @@ const Header = () => {
     });
     return () => unsubscribe(); //unscubscibe our event listener
   }, []);
+
+  const handleLanguageChange = (e) => {
+    // console.log(e.target.value);
+    //dispatching change language  and give the the target value when selection optionsn are changed.
+    dispatch(changeLanguage(e.target.value));
+  };
   return (
     <div className="absolute z-10 px-6   bg-gradient-to-b from-black w-screen flex justify-between  items-center">
       <img className="h-[70px] object-cover" src={LOGO} alt="logo" />
       {/**this will only be shown when user logged in */}
       {user && (
         <div className="cursor-pointer flex w-screen items-center justify-end p-2 mr-2">
+          <select
+            className="p-2 bg-gray-800 m-2 text-white"
+            onChange={handleLanguageChange}
+          >
+            {/**mapping through all supoorted languages arrray in constants file */}
+            {SUPPORTED_LANGUAGES.map((lang) => (
+              <option
+                className="p-2 rounded-lg"
+                key={lang.identifier}
+                value={lang.name}
+              >
+                {lang.name}
+              </option>
+            ))}
+          </select>
           <ul className="flex text-white mr-8 max-w-full justify-between items-center text-md  ">
             <li className="mr-2 hover:border-b-2 p-2  duration-150  ">Home</li>
             <li className="mr-2 hover:border-b-2 p-2  duration-150  ">

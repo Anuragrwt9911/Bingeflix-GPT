@@ -7,7 +7,7 @@ const MainContainer = () => {
   const movies = useSelector((store) => store.movie?.nowPlayingMovies);
   if (!movies) return; //if movies not present
 
-  const mainMovie = movies[11]; //selecting one movie to dislay in main container
+  const mainMovie = movies[9]; //selecting one movie to dislay in main container
   console.log(mainMovie);
 
   const { original_title, overview, id } = mainMovie; //extractiong
