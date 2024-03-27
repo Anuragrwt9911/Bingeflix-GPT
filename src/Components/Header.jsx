@@ -16,6 +16,9 @@ const Header = () => {
 
   //updating the photo when sign in
   const user = useSelector((store) => store.user);
+  //showing language select box only in gpt  page:
+  //selecting showgptbutton in our gptslice
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
 
   const handleGptSearchClick = () => {
     dispatch(toggleGptSearchView());
@@ -62,27 +65,30 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="absolute z-10 px-6   bg-gradient-to-b from-black w-screen flex justify-between  items-center">
+    <div className="bg-black absolute z-10 px-6   bg-gradient-to-b from-black w-screen flex justify-between  items-center">
       <img className="h-[70px] object-cover" src={LOGO} alt="logo" />
       {/**this will only be shown when user logged in */}
       {user && (
         <div className="cursor-pointer flex w-screen items-center justify-end p-2 mr-2">
-          <select
-            className="p-2 bg-gray-800 m-2 text-white"
-            onChange={handleLanguageChange}
-          >
-            {/**mapping through all supoorted languages arrray in constants file */}
-            {SUPPORTED_LANGUAGES.map((lang) => (
-              <option
-                className="p-2 rounded-lg"
-                key={lang.identifier}
-                value={lang.name}
-              >
-                {lang.name}
-              </option>
-            ))}
-          </select>
-          <ul className="flex text-white mr-8 max-w-full justify-between items-center text-md  ">
+          {/* {showing gpt search only when showGptbutton state is true} and show in gpt page but not show in homepage */}
+          {showGptSearch && (
+            <select
+              className="p-2 bg-gray-800 m-2 text-white"
+              onChange={handleLanguageChange}
+            >
+              {/**mapping through all supoorted languages arrray in constants file */}
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option
+                  className="p-2 rounded-lg"
+                  key={lang.identifier}
+                  value={lang.name}
+                >
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+          <ul className="  flex text-white mr-8 max-w-full justify-between items-center text-md  ">
             <li className="mr-2 hover:border-b-2 p-2  duration-150  ">Home</li>
             <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
               TV shows
@@ -101,7 +107,8 @@ const Header = () => {
             onClick={() => handleGptSearchClick()}
             className="rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-semibold mr-6"
           >
-            GPT Search
+            {/**is showgptSearch state is true(when cilcked) the button text would be homepage and vice-versa */}
+            {showGptSearch ? "HomePage" : "GptSearch"}
           </button>
           <p className="text-white text-lg font-bold ">{user?.displayName}</p>
           <img className="size-10 mr-2 " src={user?.photoURL} />

@@ -127,3 +127,26 @@ and after thatgo to secondary component where we mapped all our moviesList conta
 //Bonus feature --> creating language constants for convertng out whole page text from english to hindi.
 we can achieve this by creating a constant file and put all those languages we want in our page. and then put wherever we want after then we make a toggle functionality to toggle our desired langugage to the specified area where we have put the lang constant.
 //for togglling to another language we have to create a new slice because we have to change the language when the option is changed.
+
+//showing language button only when in gpt page not in home page.
+//registering gpt api
+//prevent default in gpt form
+
+we can't call open api on client side so the browser returns with a warning that we should not make this api call becuse it woud leak our api key for secruity purposes bcoz all this work is done by backend like nodejs but if we want to do it in client side we can use a keypair of dangerouslyAllowed : true, which lets u do openapi call on client side.
+
+//on click of search button we have to fetch the input store in input box then we call the openai api and get some results but before getting results we have to prompt it throughly , for thta we can use a variable and pass a query like "acts as a movie assitant""result examples of movies i want : "andaz-apna apan " "hera Pheri" ....
+
+//securing api keys
+
+step 1. creating .env file:
+keeping api keys in .env file
+REACT*APP*(YOUR API KEY)
+
+step 2. IN constants file -> process.env.
+
+step 3 : add .env file to gitignore file
+
+my ui layer doesn't have gpt fetature it is stored in data layer.
+tailwind breakpoints :
+md: desktop
+sm : mobiles
