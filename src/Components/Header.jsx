@@ -65,11 +65,15 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="bg-black absolute z-10 px-6   bg-gradient-to-b from-black w-screen flex justify-between  items-center">
-      <img className="h-[70px] object-cover" src={LOGO} alt="logo" />
+    <div className="  bg-black absolute z-10 px-6   bg-gradient-to-b from-black w-screen flex justify-between  items-center">
+      <img
+        className="md:h-[70px] h-[30px] object-cover"
+        src={LOGO}
+        alt="logo"
+      />
       {/**this will only be shown when user logged in */}
       {user && (
-        <div className="cursor-pointer flex w-screen items-center justify-end p-2 mr-2">
+        <div className="cursor-pointer flex items-center ml-0 justify-end p-2 md:mr-2">
           {/* {showing gpt search only when showGptbutton state is true} and show in gpt page but not show in homepage */}
           {showGptSearch && (
             <select
@@ -88,7 +92,7 @@ const Header = () => {
               ))}
             </select>
           )}
-          <ul className="  flex text-white mr-8 max-w-full justify-between items-center text-md  ">
+          <ul className=" hidden md:flex text-white mr-8 max-w-full justify-between items-center text-md   ">
             <li className="mr-2 hover:border-b-2 p-2  duration-150  ">Home</li>
             <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
               TV shows
@@ -105,7 +109,7 @@ const Header = () => {
           </ul>
           <button
             onClick={() => handleGptSearchClick()}
-            className="rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-semibold mr-6"
+            className="text-sm rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-semibold mr-6"
           >
             {/**is showgptSearch state is true(when cilcked) the button text would be homepage and vice-versa */}
             {showGptSearch ? "HomePage" : "GptSearch"}
@@ -114,7 +118,7 @@ const Header = () => {
           <img className="size-10 mr-2 " src={user?.photoURL} />
           <button
             onClick={() => handleSignOut()}
-            className=" rounded-lg text-white bg-red-500 hover:bg-red-600  px-3 py-2 font-semibold"
+            className=" text-sm rounded-lg text-white bg-red-500 hover:bg-red-600  px-3 py-2 font-semibold"
           >
             Sign Out
           </button>
