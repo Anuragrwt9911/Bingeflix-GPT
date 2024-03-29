@@ -92,18 +92,20 @@ const Header = () => {
               ))}
             </select>
           )}
-          <ul className=" hidden md:flex text-white mr-8 max-w-full justify-between items-center text-md   ">
-            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">Home</li>
-            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
+          <ul className=" hidden md:flex text-white mr-8 max-w-full justify-between items-center  font-semibold   ">
+            <li className="mr-2 hover:border-b-2 p-2  duration-150 hover:text-orange-500  ">
+              Home
+            </li>
+            <li className="mr-2 hover:border-b-2 p-2  duration-150  hover:text-orange-500 ">
               TV shows
             </li>
-            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
+            <li className="mr-2 hover:border-b-2 p-2  duration-150 hover:text-orange-500  ">
               Originals
             </li>
-            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
+            <li className="mr-2 hover:border-b-2 p-2  duration-150 hover:text-orange-500">
               My List
             </li>
-            <li className="mr-2 hover:border-b-2 p-2  duration-150  ">
+            <li className="mr-2 hover:border-b-2 p-2  duration-150 hover:text-orange-500  ">
               Recently Added
             </li>
           </ul>
