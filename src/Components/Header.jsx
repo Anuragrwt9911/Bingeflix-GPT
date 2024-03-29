@@ -65,7 +65,7 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="  bg-black absolute z-10 px-6   bg-gradient-to-b from-black w-screen flex justify-between  items-center">
+    <div className="w-full  bg-black absolute z-10 px-6   bg-gradient-to-b from-black flex justify-between  items-center">
       <img
         className="md:h-[70px] h-[30px] object-cover"
         src={LOGO}
