@@ -111,20 +111,20 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <Header />
-      <div>
+      <div className="">
         <img
-          className="h-full md-h-screen "
+          className="object-cover md:h-screen md-h-screen h-screen w-full"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_small.jpg"
           alt="bg-image"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="max-h-[1000px] shadow-lg absolute z-10  flex justify-center items-center flex-col p-8 rounded-md w-[400px] text-white bg-black top-[15vh] left-[59vh] bg-opacity-80"
+        className="text-lg md:text-md flex justify-center items-center flex-col md:max-h-[1000px] shadow-lg absolute z-10  px-7 py-3 md:p-8 rounded-md w-[21rem] md:w-[400px] text-white bg-black md:top-[15vh] top-[10rem] right-[2rem] md:left-[59vh] bg-opacity-80"
       >
-        <h2 className="text-white  text-4xl  font-bold my-3">
+        <h2 className="text-white text-3xl md:text-4xl  font-bold my-3">
           {isSignIn ? "Sign in" : "Sign Up"}
         </h2>
         {!isSignIn && (
@@ -167,7 +167,7 @@ const Login = () => {
               {isSignIn ? "New to Netflix?" : "Already Registered"}{" "}
               <p
                 onClick={() => toggleSignInForm()}
-                className="font-bold inline hover:underline cursor-pointer"
+                className="font-bold inline hover:underline cursor-pointer "
               >
                 {isSignIn ? "Sign-Up now" : "Sign-In now"}
               </p>
