@@ -122,7 +122,7 @@ const Login = () => {
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="text-lg md:text-md flex justify-center items-center flex-col md:max-h-[1000px] shadow-lg absolute z-10  px-7 py-3 md:p-8 rounded-md w-[21rem] md:w-[400px] text-white bg-black md:top-[15vh] top-[10rem] right-[2rem] md:left-[59vh] bg-opacity-80"
+        className="text-lg md:text-md flex justify-center items-center flex-col md:max-h-[1000px] shadow-lg absolute z-10  px-7 py-3 md:p-8 rounded-md w-[21rem] md:w-[400px] text-white bg-black md:top-[15vh] top-[10rem] right-[1rem] md:left-[59vh] bg-opacity-80"
       >
         <h2 className="text-white text-3xl md:text-4xl  font-bold my-3">
           {isSignIn ? "Sign in" : "Sign Up"}
