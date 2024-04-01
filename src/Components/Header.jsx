@@ -67,7 +67,7 @@ const Header = () => {
   return (
     <div className="w-full  bg-black absolute z-10 px-6   bg-gradient-to-b from-black flex justify-between  items-center">
       <img
-        className="md:h-[70px] h-[4rem] object-cover"
+        className="md:h-[70px] h-[3rem] object-cover"
         src={LOGO}
         alt="logo"
       />
@@ -77,7 +77,7 @@ const Header = () => {
           {/* {showing gpt search only when showGptbutton state is true} and show in gpt page but not show in homepage */}
           {showGptSearch && (
             <select
-              className="p-2 bg-gray-800 m-2 text-white"
+              className="p-2 bg-gray-800 md:m-2 mr-0 text-white"
               onChange={handleLanguageChange}
             >
               {/**mapping through all supoorted languages arrray in constants file */}
@@ -117,10 +117,9 @@ const Header = () => {
             {showGptSearch ? "HomePage" : "GptSearch"}
           </button>
           <p className="text-white text-lg font-bold ">{user?.displayName}</p>
-          <img className="size-10 mr-2 " src={user?.photoURL} />
           <button
             onClick={() => handleSignOut()}
-            className=" text-sm rounded-lg text-white bg-red-500 hover:bg-red-600  px-3 py-2 font-semibold"
+            className=" inline text-sm rounded-lg text-white bg-red-500 hover:bg-red-600  px-6 py-2 font-bold md:font-semibold"
           >
             Sign Out
           </button>

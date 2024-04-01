@@ -3,7 +3,7 @@ import React from "react";
 const VideoTitle = ({ title, overview }) => {
   return (
     <div className=" absolute top-0 left-0 w-full h-full text-white bg-gradient-to-r from-black">
-      <div className="relative top-[10%] left-8">
+      <div className="relative top-[14%] md:top-[10%] left-6 md:left-8 ">
         <p className="md:text-4xl text-xl font-medium md:py-2 cursor-default">
           {title}
         </p>

@@ -20,8 +20,8 @@ const MovieList = ({ title, movies }) => {
         {title}
       </h1>
 
-      <div className=" flex duration-300  overflow-hidden  ">
-        <div className="hover:transform ease-in duration-200  flex items-center p-1 group ">
+      <div className=" flex duration-300  md:overflow-x-hidden overflow-x-scroll  ">
+        <div className="hover:transform ease-in duration-200  flex items-center p-1 md:group ">
           {/**mapping all posters in the movies api */}
           {movies &&
             movies

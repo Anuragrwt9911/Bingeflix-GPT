@@ -3,7 +3,7 @@ import { IMG_CDN_URL } from "../utils/constants";
 
 const MovieCards = ({ posterPath, movieName }) => {
   return (
-    <div className="md:w-[145px] w-[130px] h-full mr-3 cursor-default">
+    <div className="md:w-[145px] w-[100px] h-full mr-2 md:mr-3 cursor-default">
       <img
         className=" md:size-48 size-28 object-cover rounded-md shadow-lg cursor-pointer md:hover:scale-110 duration-300  "
         src={IMG_CDN_URL + posterPath}

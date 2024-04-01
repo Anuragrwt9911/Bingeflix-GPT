@@ -54,8 +54,6 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7SN6wWYCXNa1z0Q8Z2NTkH-oRy9loccZ2I5n_X_uX1A&s",
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser; //destructung user id, email and
@@ -66,7 +64,6 @@ const Login = () => {
                   uid: uid,
                   email: email,
                   displayName: displayName,
-                  photoURL: photoURL,
                 })
                 // Profile updated!--> then navigate
               );
