@@ -9,6 +9,8 @@ export const API_OPTIONS = {
     Authorization: "Bearer " + import.meta.env.VITE_TMDB_KEY,
   },
 };
+export const FIREBASE_CONFIG_API_KEY =
+  "AIzaSyCcz-IJBkUZ_IIja1-9Imu-v_xDpXi9fEs";
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w400";
 
