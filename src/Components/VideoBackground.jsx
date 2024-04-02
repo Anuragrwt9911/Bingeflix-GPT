@@ -6,9 +6,9 @@ const VideoBackground = ({ movieId }) => {
   useMovieTrailer(movieId);
 
   return (
-    <div className=" p-0 w-full md:pt-0 h-full">
+    <div className="  w-full md:pt-0 ">
       <iframe
-        className=" md:aspect-video  h-[28rem]  w-full"
+        className="aspect-square md:aspect-video       bg-gradient-to-r from-black w-full"
         src={
           "https://www.youtube.com/embed/" +
           trailerVideo?.key +

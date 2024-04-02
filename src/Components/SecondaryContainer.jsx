@@ -6,8 +6,8 @@ const SecondaryContainer = () => {
   //subsribing to the store to get our slice of movies and geting the state where we stored our all nowPlayingMovies fromt the redux store.
   const movies = useSelector((store) => store.movie);
   return (
-    <div className="md:w-screen w-full bg-black text-white ">
-      <div className="md:-mt-28 -mt-44 relative z-30">
+    <div className=" w-full bg-black text-white ">
+      <div className="md:-mt-52 -mt-36 relative z-30">
         <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
 
         <MovieList title={"Most Rated"} movies={movies.topRatedMovies} />
