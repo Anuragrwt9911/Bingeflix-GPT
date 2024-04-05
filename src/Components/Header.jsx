@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
@@ -13,6 +13,7 @@ import { changeLanguage } from "../utils/configSlice";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [showNavLinks, setShowNavLinks] = useState(true);
 
   //updating the photo when sign in
   const user = useSelector((store) => store.user);
@@ -65,9 +66,19 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="md:py-1 py-5 w-full  bg-black absolute z-10 md:px-6  px-2 bg-gradient-to-b from-black flex md:justify-between   items-center">
+    <div className="md:py-2 py-3 w-full  bg-black fixed top-0 left-0 z-50 md:px-6  px-2 bg-gradient-to-b from-black flex md:justify-between items-center">
+      <button
+        onClick={() => setShowNavLinks(!showNavLinks)}
+        className="md:hidden cursor-pointer "
+      >
+        {showNavLinks ? (
+          <i class="  m-2  text-white text-2xl fa-solid fa-bars"></i>
+        ) : (
+          <i class="m-2 text-white text-2xl fa-solid fa-xmark"></i>
+        )}
+      </button>
       <img
-        className="md:h-[70px] h-[2.5rem] object-cover"
+        className="md:h-[70px] h-[2.5rem] object-cover md:mr-12 mr-2 ml-0 md:ml-4"
         src={LOGO}
         alt="logo"
       />
@@ -77,13 +88,13 @@ const Header = () => {
           {/* {showing gpt search only when showGptbutton state is true} and show in gpt page but not show in homepage */}
           {showGptSearch && (
             <select
-              className="p-2 bg-gray-800 md:m-2 mr-0 text-white"
+              className="p-2 bg-gray-800 md:m-2 mr-0 text-white font-[poppins]"
               onChange={handleLanguageChange}
             >
               {/**mapping through all supoorted languages arrray in constants file */}
               {SUPPORTED_LANGUAGES.map((lang) => (
                 <option
-                  className="p-2 rounded-lg"
+                  className="md:p-1 rounded-lg"
                   key={lang.identifier}
                   value={lang.name}
                 >
@@ -92,36 +103,42 @@ const Header = () => {
               ))}
             </select>
           )}
-          <ul className=" hidden md:flex text-white mr-8 max-w-full justify-between items-center  font-semibold   ">
-            <li className=" mr-2 hover:border-b-2 p-2  duration-150 hover:text-orange-500  ">
-              Home
+          <ul
+            className={`md:flex md:bg-black md:text-[15px]  text-lg md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[5rem] left-5 bg-white md:p-1 p-3  cursor-pointer transition-all duration-200 ease-in-out  ${
+              !showNavLinks ? "top-[5rem]" : "left-[-490px]"
+            }  `}
+          >
+            <li className=" mr-3 p-2  duration-300 hover:text-orange-500  ">
+              <i class="mr-3 md:mr-1 fa-solid fa-house"></i> Home
             </li>
-            <li className="mr-2 hover:border-b-2 p-2  duration-150  hover:text-orange-500 ">
-              TV shows
+            <li className="mr-3 p-2  duration-300 hover:text-orange-500 ">
+              <i class="mr-3 md:mr-1 fa-solid fa-tv"></i> TV shows
             </li>
-            <li className="mr-2 hover:border-b-2 p-2  duration-150 hover:text-orange-500  ">
-              Originals
+            <li className="mr-3  p-2  duration-300 hover:text-orange-500  ">
+              <i class="mr-3 md:mr-1 fa-solid fa-clapperboard"></i>Originals
             </li>
-            <li className="mr-2 hover:border-b-2 p-2  duration-150 hover:text-orange-500">
-              My List
+            <li className="mr-3 p-2  duration-300 hover:text-orange-500">
+              <i class="mr-3  md:mr-1 fa-solid fa-film"></i> My List
             </li>
-            <li className="mr-2 hover:border-b-2 p-2  duration-150 hover:text-orange-500  ">
-              Recently Added
+            <li className="mr-3  p-2  duration-300 hover:text-orange-500  ">
+              <i class="mr-3  md:mr-1 fa-solid fa-video"></i> Recently Added
             </li>
           </ul>
+          ) )
           <button
             onClick={() => handleGptSearchClick()}
-            className="text-sm rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-semibold mr-2 md:mr-6"
+            className="text-sm rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-medium md:font-[poppins] md:font-bold mr-2 md:mr-6"
           >
             {/**is showgptSearch state is true(when cilcked) the button text would be homepage and vice-versa */}
-            {showGptSearch ? "HomePage" : "GptSearch"}
+            <i class="fa-solid fa-fire mr-0 md:mr-1"></i>{" "}
+            {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
           <p className="text-white text-lg font-bold ">{user?.displayName}</p>
           <button
             onClick={() => handleSignOut()}
-            className=" inline text-sm rounded-xl text-white bg-red-500 hover:bg-red-600  px-4 md:px-6 py-2 font-bold md:font-semibold"
+            className=" inline text-sm rounded-xl text-white bg-red-500 hover:bg-red-600  px-4 md:px-4 py-2 font-medium md:font-[poppins] md:font-bold"
           >
-            Sign Out
+            <i class="fa-solid fa-right-from-bracket mr-0 md:mr-1"></i> Sign Out
           </button>
         </div>
       )}

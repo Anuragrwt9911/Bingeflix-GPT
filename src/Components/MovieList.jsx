@@ -16,7 +16,7 @@ const MovieList = ({ title, movies }) => {
 
   return (
     <div className="  md:px-6 px-2 text-white ">
-      <h1 className="cursor-default md:text-3xl md:font-normal text-xl font-bold md:my-4 my-1">
+      <h1 className="cursor-default md:text-3xl md:font-normal font-[poppins] text-xl font-bold  md:my-4 my-3">
         {title}
       </h1>
 
@@ -34,20 +34,20 @@ const MovieList = ({ title, movies }) => {
                 />
               ))}
           <div
-            className="hidden group-hover:hidden md:group-hover:block left-4 right-10 top-[30%]
-           w-full absolute z-40 text-white md:text-black "
+            className="hidden group-hover:hidden md:group-hover:block left-4 right-10 top-[30%] text-white
+           w-full absolute z-40  "
           >
             <button
               onClick={handlePreviousMovie}
-              className="px-2 py-1  -ml-8 md:bg-slate-300  rounded-full md:px-4 md:py-3 hover:opacity-80   text-xl font-extrabold mr-[88vw]"
+              className="px-2 py-1  -ml-8 bg-black  rounded-full md:px-5 md:py-3    text-xl font-extrabold mr-[88vw]"
             >
-              <i class="fa-solid fa-arrow-left"></i>
+              <i class="fa-solid fa-angle-left"></i>
             </button>
             <button
               onClick={handleNextMovie}
-              className="px-2 py-1 fixed right-0 top-[30%] md:mr-24 mr-[73%] md:bg-slate-300   rounded-full md:px-4 md:py-3  hover:opacity-80 text-xl font-extrabold  "
+              className="px-2 py-1 fixed right-0 top-[30%] md:mr-24 mr-[73%] bg-black  rounded-full md:px-5 md:py-3   text-xl font-extrabold  "
             >
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-angle-right"></i>
             </button>
           </div>
           ) )

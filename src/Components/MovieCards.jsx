@@ -9,7 +9,7 @@ const MovieCards = ({ posterPath, movieName }) => {
         src={IMG_CDN_URL + posterPath}
         alt="movieCard"
       />
-      <p className="text-sm font-medium my-2 ">{movieName}</p>
+      <p className="text-sm font-medium font-[poppins] my-3 ">{movieName}</p>
     </div>
   );
 };
