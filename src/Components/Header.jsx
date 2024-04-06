@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
@@ -72,13 +72,13 @@ const Header = () => {
         className="md:hidden cursor-pointer "
       >
         {showNavLinks ? (
-          <i class="  m-2  text-white text-2xl fa-solid fa-bars"></i>
+          <i class="  m-2  text-white text-xl md:text-2xl fa-solid fa-bars"></i>
         ) : (
-          <i class="m-2 text-white text-2xl fa-solid fa-xmark"></i>
+          <i class="m-2 text-white text-xl md:text-2xl fa-solid fa-xmark"></i>
         )}
       </button>
       <img
-        className="md:h-[70px] h-[2.5rem] object-cover md:mr-12 mr-2 ml-0 md:ml-4"
+        className="md:h-[30px] h-[20px] object-cover md:mr-12 mr-2 ml-0 md:ml-4"
         src={LOGO}
         alt="logo"
       />
@@ -104,24 +104,23 @@ const Header = () => {
             </select>
           )}
           <ul
-            className={`md:flex md:bg-black md:text-[15px]  text-lg md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[5rem] left-5 bg-white md:p-1 p-3  cursor-pointer transition-all duration-200 ease-in-out  ${
+            className={`md:flex md:bg-black md:text-[15px]  text-sm md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[5rem] left-5 bg-white md:p-1 p-3  cursor-pointer transition-all duration-200 ease-in-out  ${
               !showNavLinks ? "top-[5rem]" : "left-[-490px]"
             }  `}
           >
             <li className=" mr-3 p-2  duration-300 hover:text-orange-500  ">
-              <i class="mr-3 md:mr-1 fa-solid fa-house"></i> Home
+              <i class="mr-3 md:mr-1 fa-solid fa-house"></i>{" "}
+              <Link to="/home">Home</Link>
             </li>
             <li className="mr-3 p-2  duration-300 hover:text-orange-500 ">
-              <i class="mr-3 md:mr-1 fa-solid fa-tv"></i> TV shows
+              <i class="mr-3 md:mr-1 fa-solid fa-tv"></i>{" "}
+              <Link to="/tvshows">TV Shows</Link>
             </li>
             <li className="mr-3  p-2  duration-300 hover:text-orange-500  ">
               <i class="mr-3 md:mr-1 fa-solid fa-clapperboard"></i>Originals
             </li>
             <li className="mr-3 p-2  duration-300 hover:text-orange-500">
               <i class="mr-3  md:mr-1 fa-solid fa-film"></i> My List
-            </li>
-            <li className="mr-3  p-2  duration-300 hover:text-orange-500  ">
-              <i class="mr-3  md:mr-1 fa-solid fa-video"></i> Recently Added
             </li>
           </ul>
           ) )

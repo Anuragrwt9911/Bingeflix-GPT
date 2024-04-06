@@ -150,3 +150,5 @@ my ui layer doesn't have gpt fetature it is stored in data layer.
 tailwind breakpoints :
 md: desktop
 sm : mobiles
+
+memoization means if our store has previously fetched api data then we don't have to fetch api after that . we can just use the store data which is previously fetched using memoization in react.js

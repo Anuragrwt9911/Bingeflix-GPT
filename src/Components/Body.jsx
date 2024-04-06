@@ -3,6 +3,7 @@ import Login from "./Login";
 import Browse from "./Browse";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
+import TVList from "./TVList";
 
 const Body = () => {
   //creating routing configuration for body
@@ -15,6 +16,14 @@ const Body = () => {
     {
       path: "/browse",
       element: <Browse />,
+    },
+    {
+      path: "/home",
+      element: <Browse />,
+    },
+    {
+      path: "/tvshows",
+      element: <TVList />,
     },
   ]);
 
