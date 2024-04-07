@@ -6,9 +6,10 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../utils/userSlice";
 import { addUser } from "../utils/userSlice";
-import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
+import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="md:py-2 py-3 w-full  bg-black fixed top-0 left-0 z-50 md:px-6  px-2 bg-gradient-to-b from-black flex md:justify-between items-center">
+    <div className="md:py-2 py-3  w-full bg-black fixed top-0 left-0 z-50 md:px-6  px-2 bg-gradient-to-b from-black flex md:justify-between items-center">
       <button
         onClick={() => setShowNavLinks(!showNavLinks)}
         className="md:hidden cursor-pointer "
@@ -78,11 +79,10 @@ const Header = () => {
         )}
       </button>
       <img
-        className="md:h-[30px] h-[20px] object-cover md:mr-12 mr-2 ml-0 md:ml-4"
-        src={LOGO}
+        className="md:h-[100px] md:size-56 h-[50px] size-32 object-cover md:mr-12 mr-2 ml-0 md:ml-4"
+        src={logo}
         alt="logo"
       />
-      {/**this will only be shown when user logged in */}
       {user && (
         <div className="cursor-pointer flex items-center ml-0 justify-end md:p-2 p-0 md:mr-2 ">
           {/* {showing gpt search only when showGptbutton state is true} and show in gpt page but not show in homepage */}

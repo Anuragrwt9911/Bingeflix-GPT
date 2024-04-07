@@ -16,7 +16,7 @@ const MainContainer = () => {
   const { original_title, overview, id } = mainMovie; //extractiong
 
   return (
-    <div className="">
+    <div className="w-full">
       <VideoTitle title={original_title} overview={overview} />
 
       <VideoBackground movieId={id} />
