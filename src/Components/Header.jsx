@@ -9,7 +9,7 @@ import { addUser } from "../utils/userSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
-import logo from "../assets/logo.png";
+import { LOGO } from "../utils/constants";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -79,8 +79,8 @@ const Header = () => {
         )}
       </button>
       <img
-        className="md:h-[100px] md:size-56 h-[50px] size-32 object-cover md:mr-12 mr-2 ml-0 md:ml-4"
-        src={logo}
+        className="md:h-[30px]  h-[20px]  object-cover md:mr-12 mr-2 ml-0 md:ml-4"
+        src={LOGO}
         alt="logo"
       />
       {user && (
@@ -104,7 +104,7 @@ const Header = () => {
             </select>
           )}
           <ul
-            className={`md:flex md:bg-black md:text-[15px]  text-sm md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[5rem] left-5 bg-white md:p-1 p-3  cursor-pointer transition-all duration-200 ease-in-out  ${
+            className={`md:flex md:bg-black md:text-[15px]  text-sm md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[4rem] left-4 bg-white md:p-1 pt-3 pb-10 px-4  cursor-pointer transition-all duration-200 ease-in-out  ${
               !showNavLinks ? "top-[5rem]" : "left-[-490px]"
             }  `}
           >
@@ -126,10 +126,13 @@ const Header = () => {
           ) )
           <button
             onClick={() => handleGptSearchClick()}
-            className="text-sm rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-medium md:font-[poppins] md:font-bold mr-2 md:mr-6"
+            className={`md:block  md:static absolute   text-sm rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-medium md:font-[poppins] md:font-bold mr-2 md:mr-6  transition-all duration-500 ease-in ${
+              !showNavLinks ? "top-[218px] left-7" : "hidden"
+            }
+            }  `}
           >
             {/**is showgptSearch state is true(when cilcked) the button text would be homepage and vice-versa */}
-            <i class="fa-solid fa-fire mr-0 md:mr-1"></i>{" "}
+            <i class="fa-solid fa-fire mr-3 md:mr-1"></i>{" "}
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
           <p className="text-white text-lg font-bold ">{user?.displayName}</p>

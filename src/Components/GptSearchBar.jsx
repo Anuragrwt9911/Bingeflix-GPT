@@ -63,7 +63,7 @@ const GptSearchBar = () => {
     <div className="md:top-30 md:left-[50vh] top-40  left-3 absolute bg-black p-1  rounded-xl">
       <form onSubmit={(e) => e.preventDefault()}>
         <input
-          className="md:px-8 md:py-4 px-6 py-2 w-[260px] md:w-[400px] rounded-xl focus:outline-none    "
+          className="md:px-8 md:py-4 px-6 py-2 w-[250px] md:w-[400px] rounded-xl focus:outline-none    "
           type="text"
           ref={searchText}
           placeholder={lang[langKey].gptSearchPlaceholder}
