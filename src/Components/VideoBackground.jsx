@@ -8,7 +8,7 @@ const VideoBackground = ({ movieId }) => {
   return (
     <div className=" w-full md:pt-0 ">
       {/* Assuming this is React JSX code */}
-      <video
+      {/* <video
         className="aspect-video overflow-hidden bg-gradient-to-r from-black w-full"
         controls
         autoPlay
@@ -19,7 +19,7 @@ const VideoBackground = ({ movieId }) => {
           type="video/mp4"
         />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
     </div>
   );
 };
