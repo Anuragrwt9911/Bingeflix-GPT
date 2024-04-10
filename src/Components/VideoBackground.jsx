@@ -7,17 +7,19 @@ const VideoBackground = ({ movieId }) => {
 
   return (
     <div className=" w-full md:pt-0 ">
-      <iframe
-        className="aspect-video overflow-hidden       bg-gradient-to-r from-black w-full"
-        src={
-          "https://www.youtube-nocookie.com/embed/" +
-          trailerVideo?.key +
-          "?autoplay=1&loop=1&mute=1&playlist=" +
-          trailerVideo?.key
-        }
-        title="Youtube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-      ></iframe>
+      {/* Assuming this is React JSX code */}
+      <video
+        className="aspect-video overflow-hidden bg-gradient-to-r from-black w-full"
+        controls
+        autoPlay
+        muted
+      >
+        <source
+          src={`https://www.youtube-nocookie.com/embed/${trailerVideo?.key}?autoplay=1&loop=1&mute=1&playlist=${trailerVideo?.key}`}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };
