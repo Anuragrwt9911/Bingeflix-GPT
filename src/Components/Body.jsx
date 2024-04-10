@@ -4,6 +4,7 @@ import Browse from "./Browse";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import TVList from "./TVList";
+import Overview from "./Overview";
 
 const Body = () => {
   //creating routing configuration for body
@@ -24,6 +25,10 @@ const Body = () => {
     {
       path: "/tvshows",
       element: <TVList />,
+    },
+    {
+      path: "/overview/:movieId",
+      element: <Overview />,
     },
   ]);
 

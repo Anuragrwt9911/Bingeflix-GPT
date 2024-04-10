@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MovieCards from "./MovieCards";
+import { Link } from "react-router-dom";
 
 const MovieList = ({ title, movies }) => {
   const [startIndex, setStartIndex] = useState(0);
@@ -24,15 +25,15 @@ const MovieList = ({ title, movies }) => {
         <div className="hover:transform ease-in duration-200  flex items-center p-1 group ">
           {/**mapping all posters in the movies api */}
           {movies &&
-            movies
-              .slice(startIndex, startIndex + 8)
-              .map((movie) => (
+            movies.slice(startIndex, startIndex + 8).map((movie) => (
+              <Link to={"/overview/" + movie?.id}>
                 <MovieCards
                   key={movie.poster_path}
                   posterPath={movie.poster_path}
                   movieName={movie.original_title}
                 />
-              ))}
+              </Link>
+            ))}
           <div
             className="hidden group-hover:hidden md:group-hover:block left-4 right-10 top-[30%] text-white
            w-full absolute z-40  "
