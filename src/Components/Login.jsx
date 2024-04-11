@@ -56,7 +56,7 @@ const Login = () => {
             displayName: name.current.value,
           })
             .then(() => {
-              const { uid, email, displayName, photoURL } = auth.currentUser; //destructung user id, email and
+              const { uid, email, displayName } = auth.currentUser; //destructung user id, email and
               //displayname from new user .
               //then we dispatch an action which is to addUser
               dispatch(
