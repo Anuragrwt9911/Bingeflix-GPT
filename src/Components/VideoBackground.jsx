@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import useMovieTrailer from "../hooks/useMovieTrailer";
-import ReactPlayer from "react-player/youtube";
 
 const VideoBackground = ({ movieId }) => {
   const trailerVideo = useSelector((store) => store.movie?.trailerVideo);

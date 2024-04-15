@@ -108,18 +108,18 @@ const Login = () => {
   };
 
   return (
-    <div className="font-[poppins]">
+    <div className="h-full font-[poppins]">
       <Header />
-      <div className="">
+      <div className="h-full">
         <img
-          className="object-cover md:h-screen md-h-screen h-screen w-full"
+          className="object-cover h-[1000px]  w-full"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_small.jpg"
           alt="bg-image"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="text-lg md:text-md flex justify-center items-center flex-col md:max-h-[1000px] shadow-lg absolute z-10 px-5 py-5 md:px-7 md:py-3 md:p-8 rounded-md w-[323px] md:w-[400px] text-white bg-black md:top-[15vh] top-[10rem] right-[2rem] md:left-[59vh] bg-opacity-80"
+        className="text-lg md:text-md flex justify-center items-center flex-col md:max-h-[1000px] shadow-lg absolute z-10 px-5 py-5 md:px-7 md:py-3 md:p-8 rounded-md w-[323px] md:w-[400px] text-white bg-black md:top-[15vh] top-[10rem] right-[20px] md:left-[59vh] bg-opacity-80"
       >
         <h2 className="text-white text-3xl md:text-4xl  font-bold my-3">
           {isSignIn ? "Sign in" : "Sign Up"}
