@@ -135,10 +135,12 @@ const Header = () => {
             <i class="fa-solid fa-fire mr-3 md:mr-1"></i>{" "}
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
-          <p className="text-white text-lg font-bold ">{user?.displayName}</p>
+          <p className="static md:absolute top-[26px] left-[16rem] inline text-white text-sm font-bold font-[poppins] mr-6">
+            Welcome!, {user?.displayName}
+          </p>
           <button
             onClick={() => handleSignOut()}
-            className=" inline text-sm rounded-xl text-white bg-red-500 hover:bg-red-600  px-4 md:px-4 py-2 font-medium md:font-[poppins] md:font-bold"
+            className=" inline text-sm rounded-xl text-white bg-red-500 hover:bg-red-600  px-3 md:px-4 py-2 font-medium md:font-[poppins] md:font-bold"
           >
             <i class="fa-solid fa-right-from-bracket mr-0 md:mr-1"></i> Sign Out
           </button>

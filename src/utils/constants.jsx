@@ -12,7 +12,7 @@ export const API_OPTIONS = {
   },
 };
 export const FIREBASE_CONFIG_API_KEY =
-  "AIzaSyCcz-IJBkUZ_IIja1-9Imu-v_xDpXi9fEs";
+  "AIzaSyDXNIDFn1xjzuKpGDIDGlNVM8_Kzr_qb8c";
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w400";
 
