@@ -152,3 +152,7 @@ md: desktop
 sm : mobiles
 
 memoization means if our store has previously fetched api data then we don't have to fetch api after that . we can just use the store data which is previously fetched using memoization in react.js
+
+//movie info page planning -> 
+1. made components for movie cast, movieoverview,movieVideos which are stored in movieInfocontainer component
+2. using the api which is stored previously in our redux slice which is the movie slice so we destructure that {id} from the store and pass it to all components 

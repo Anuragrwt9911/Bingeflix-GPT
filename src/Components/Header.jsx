@@ -83,6 +83,9 @@ const Header = () => {
         src={LOGO}
         alt="logo"
       />
+      {/* <span className="absolute top-10 left-[36px] text-white font-[poppins] text-3xl font-[600]">
+        BingleFlix-GPT
+      </span> */}
       {user && (
         <div className="cursor-pointer flex items-center ml-0 justify-end md:p-2 p-0 md:mr-2 ">
           {/* {showing gpt search only when showGptbutton state is true} and show in gpt page but not show in homepage */}
