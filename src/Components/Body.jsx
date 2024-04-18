@@ -4,12 +4,9 @@ import Browse from "./Browse";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import TVList from "./TVList";
-import Overview from "./MovieInfo";
 import MovieInfoContainer from "./MovieInfoContainer";
 
 const Body = () => {
-  //creating routing configuration for body
-
   const appRouter = createBrowserRouter([
     {
       path: "/",

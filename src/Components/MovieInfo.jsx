@@ -1,17 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import useMovieInfo from "../hooks/useMovieInfo";
 import { useSelector } from "react-redux";
 import Loader from "./Loader";
 import { IMG_CDN_URL } from "../utils/constants";
+import useMovieInfo from "../hooks/useMovieInfo";
+import Header from "./Header";
 
-const MovieInfo = () => {
-  const { movieId } = useParams();
-  console.log(movieId);
-  useMovieInfo(movieId);
-
-  const info = useSelector((store) => store.movie.movieInfo);
-
+const MovieInfo = ({ info }) => {
   if (!info) return <Loader />;
 
   return (

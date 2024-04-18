@@ -15,6 +15,7 @@ export const FIREBASE_CONFIG_API_KEY =
   "AIzaSyDXNIDFn1xjzuKpGDIDGlNVM8_Kzr_qb8c";
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w400";
+export const BANNER_IMG_CDN_URL = "https://image.tmdb.org/t/p/original";
 
 //creating a constant for all languages supported
 export const SUPPORTED_LANGUAGES = [
