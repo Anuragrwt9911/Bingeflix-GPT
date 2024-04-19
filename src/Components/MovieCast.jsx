@@ -1,15 +1,15 @@
-import React, { Profiler } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { BANNER_IMG_CDN_URL, IMG_CDN_URL } from "../utils/constants";
+import { IMG_CDN_URL } from "../utils/constants";
 
 const MovieCast = () => {
   const moviecast = useSelector((store) => store.movie.movieCast);
   console.log(moviecast);
 
   return (
-    <div className=" pt-8  bg-black text-white font-[poppins] ">
-      <span className=" text-4xl ml-12 font-[400]">Top Billed Cast</span>
-      <div className=" w-full mt-6 mx-10 flex gap-4  overflow-x-scroll">
+    <div className="pt-32  bg-black text-white font-[poppins] ">
+      <span className=" text-4xl ml-12 font-[400]">Top Cast</span>
+      <div className="   mt-6 mx-10 flex gap-4  overflow-x-scroll">
         {moviecast &&
           moviecast?.cast.map((item) => {
             return (

@@ -9,7 +9,6 @@ import { useParams } from "react-router-dom";
 import useMovieCast from "../hooks/useMovieCast";
 import useMovieVideos from "../hooks/useMovieVideos";
 import Header from "./Header";
-import { BANNER_IMG_CDN_URL } from "../utils/constants";
 
 const MovieInfoContainer = () => {
   const { movieId } = useParams();
@@ -19,9 +18,9 @@ const MovieInfoContainer = () => {
   useMovieInfo(movieId);
   useMovieCast(movieId);
   useMovieVideos(movieId);
-
   return (
     <div>
+      <Header />
       <MovieInfo info={info} />
       <MovieCast />
       <MovieVideos />

@@ -6,12 +6,12 @@ const MovieList = ({ title, movies }) => {
   const [startIndex, setStartIndex] = useState(0);
   const handleNextMovie = () => {
     if (startIndex + 7 < movies.length) {
-      setStartIndex(startIndex + 2);
+      setStartIndex(startIndex + 3);
     }
   };
   const handlePreviousMovie = () => {
-    if (startIndex - 2 >= 0) {
-      setStartIndex(startIndex - 2);
+    if (startIndex - 3 >= 0) {
+      setStartIndex(startIndex - 3);
     }
   };
 
@@ -21,7 +21,7 @@ const MovieList = ({ title, movies }) => {
         {title}
       </h1>
 
-      <div className=" flex duration-300  md:overflow-x-hidden overflow-x-scroll  ">
+      <div className=" flex duration-300  md:overflow-x-hidden overflow-x-scroll scroll-smooth ">
         <div className="hover:transform ease-in duration-200  flex items-center p-1 group ">
           {/**mapping all posters in the movies api */}
           {movies &&

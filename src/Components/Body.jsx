@@ -3,7 +3,6 @@ import Login from "./Login";
 import Browse from "./Browse";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import TVList from "./TVList";
 import MovieInfoContainer from "./MovieInfoContainer";
 
 const Body = () => {
@@ -20,10 +19,7 @@ const Body = () => {
       path: "/home",
       element: <Browse />,
     },
-    {
-      path: "/tvshows",
-      element: <TVList />,
-    },
+
     {
       path: "/overview/:movieId",
       element: <MovieInfoContainer />,

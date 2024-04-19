@@ -1,9 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import Loader from "./Loader";
 import { BANNER_IMG_CDN_URL, IMG_CDN_URL } from "../utils/constants";
-import useMovieInfo from "../hooks/useMovieInfo";
-import Header from "./Header";
 
 const MovieInfo = ({ info }) => {
   const releaseYear = info?.release_date.slice(0, 4);
@@ -20,42 +17,42 @@ const MovieInfo = ({ info }) => {
   if (!info) return <Loader />;
 
   return (
-    <div className=" relative z-30  h-full flex font-[poppins] items-center justify-between bg-black text-white ">
-      <div className="h-full w-[76rem] opacity-75 absolute  top-0 left-0 z--20">
+    <div className="md:top-20 top-16 relative z-30  h-full flex font-[poppins] items-center justify-between md:flex-row flex-col bg-black text-white ">
+      <div className="h-full md:w-[76rem] w-[450px] opacity-75 absolute  top-0 left-0 z--20">
         <img
           className=" h-full w-full rounded-md  object-cover  "
           src={BANNER_IMG_CDN_URL + info?.backdrop_path}
         />
       </div>
 
-      <div className="relative z-30 h-full w-[42rem] mr-10">
+      <div className="md:block flex justify-center items-center relative md:top-0 top-10 z-30 h-[18rem] md:h-full md:w-[42rem] w-[18rem] mr-10">
         <img
-          className="size-96 rounded-md  object-cover mx-10 "
+          className="size-96 h-full rounded-md  object-cover mx-10 "
           src={IMG_CDN_URL + info?.poster_path}
         />
       </div>
       <div className="relative z-30 flex flex-col mx-10 my-10">
         <div className="my-8 flex  w-full">
-          <p className="text-6xl font-[800] hover:text-gray-300 cursor-default   ">
+          <p className="text-4xl md:text-6xl font-[600] md:font-[800]  hover:text-gray-300 cursor-default  ">
             {info?.title}
           </p>
-          <p className="font-light text-4xl ml-2 py-2  ">({releaseYear}) </p>
+          <br></br>
+          <p className="font-light text-3xl md:text-4xl ml-1 md:ml-2 py-2 ">
+            ({releaseYear}){" "}
+          </p>
         </div>
 
-        <p className="">
-          <span className=" ">Popularity : </span>
-          {info?.popularity}
-        </p>
         {info?.tagline && (
-          <p>
-            <span>Tagline : </span>
-            {info?.tagline}
-          </p>
+          <p className="text-2xl my-2 font-light">"{info?.tagline}"</p>
         )}
 
-        <p>Duration : {formatRuntime(info?.runtime)}</p>
         <p>
-          <span>Country</span> : {info?.origin_country}
+          Duration :{" "}
+          <span className="font-bold"> {formatRuntime(info?.runtime)}</span>
+        </p>
+        <p>
+          <span>Country</span> :{" "}
+          <span className="font-bold">{info?.origin_country}</span>
         </p>
         <div className="my-4 ">
           <span className="  text-xl font-bold ">Overview </span>
@@ -63,10 +60,9 @@ const MovieInfo = ({ info }) => {
         </div>
         <div className="flex items-center ">
           {" "}
-          <span className="font-bold text-xl ">Genres </span>
           {info?.genres.map((item, index) => (
             <p
-              className="mx-2  border-2 hover:text-orange-500 cursor-default border-orange-400 rounded-xl px-4 py-2"
+              className="mx-1  border hover:text-orange-500 cursor-default border-white rounded-full px-2 py-1 text-sm"
               key={info?.id}
             >
               {item.name}

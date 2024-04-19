@@ -9,7 +9,6 @@ import { addUser } from "../utils/userSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
-import { LOGO } from "../utils/constants";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -51,7 +50,9 @@ const Header = () => {
             photoURL: photoURL,
           })
         ); //displatchin an action which is to add user and then passing some user objects to get the data from the user object into our redux store.
-        navigate("/browse");
+        if (window.location.pathname === "/") {
+          navigate("/browse");
+        }
       } else {
         // User is signed out
         dispatch(removeUser());
@@ -79,13 +80,13 @@ const Header = () => {
         )}
       </button>
       <img
-        className="md:h-[80px] md:w-[80px]  h-[20px]  object-cover md:mr-12 mr-2 ml-0 md:ml-4"
+        className="cursor-default md:h-[80px] md:w-[80px]  h-[50px] w-[50px]  object-cover md:mr-12 mr-2 ml-0 md:ml-4"
         src={
           "https://th.bing.com/th/id/OIP.pEnX3wBibLDqc8_mVPfUIAAAAA?rs=1&pid=ImgDetMain"
         }
         alt="logo"
       />
-      <p className="absolute left-8 top-[4rem]  font-bold text-md font-[poppins] text-white">
+      <p className="md:block hidden absolute left-10 top-[55px] cursor-default font-bold text-[13px] font-[poppins] text-white">
         Bingeflix-GPT
       </p>
       {/* <span className="absolute top-10 left-[36px] text-white font-[poppins] text-3xl font-[600]">
@@ -115,12 +116,7 @@ const Header = () => {
             className={`md:flex md:bg-black md:text-[15px]  text-sm md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[4rem] left-4 bg-white md:p-1 pt-3 pb-10 px-4  cursor-pointer transition-all duration-200 ease-in-out  ${
               !showNavLinks ? "top-[5rem]" : "left-[-490px]"
             }  `}
-          >
-            <li className=" mr-3 p-2  duration-300 hover:text-orange-500  ">
-              <i class="mr-3 md:mr-1 fa-solid fa-house"></i>{" "}
-              <Link to="/home">Home</Link>
-            </li>
-          </ul>
+          ></ul>
           ) )
           <button
             onClick={() => handleGptSearchClick()}
@@ -133,7 +129,7 @@ const Header = () => {
             <i class="fa-solid fa-fire mr-3 md:mr-1"></i>{" "}
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
-          <p className="static md:absolute top-[26px] right-[30rem] inline text-white text-sm font-bold font-[poppins] ">
+          <p className="static md:absolute top-[26px] right-[30rem] inline text-white text-sm font-bold font-[poppins] md:mr-0 mr-8 ">
             Welcome!, {user?.displayName}
           </p>
           <button

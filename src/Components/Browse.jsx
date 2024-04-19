@@ -18,6 +18,7 @@ const Browse = () => {
   return (
     <div className="w-full">
       <Header />
+
       {showGptSearch ? (
         <GptSearch />
       ) : (
