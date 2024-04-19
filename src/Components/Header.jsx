@@ -67,7 +67,7 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="md:py-2 py-3  w-full bg-black fixed top-0 left-0 z-50 md:px-6  px-2 bg-gradient-to-b from-black flex md:justify-between items-center">
+    <div className="md:py-0 py-3  w-full bg-black fixed top-0 left-0 z-50 md:px-6  px-2 bg-gradient-to-b from-black flex md:justify-between items-center">
       <button
         onClick={() => setShowNavLinks(!showNavLinks)}
         className="md:hidden cursor-pointer "
@@ -79,10 +79,15 @@ const Header = () => {
         )}
       </button>
       <img
-        className="md:h-[30px]  h-[20px]  object-cover md:mr-12 mr-2 ml-0 md:ml-4"
-        src={LOGO}
+        className="md:h-[80px] md:w-[80px]  h-[20px]  object-cover md:mr-12 mr-2 ml-0 md:ml-4"
+        src={
+          "https://th.bing.com/th/id/OIP.pEnX3wBibLDqc8_mVPfUIAAAAA?rs=1&pid=ImgDetMain"
+        }
         alt="logo"
       />
+      <p className="absolute left-8 top-[4rem]  font-bold text-md font-[poppins] text-white">
+        Bingeflix-GPT
+      </p>
       {/* <span className="absolute top-10 left-[36px] text-white font-[poppins] text-3xl font-[600]">
         BingleFlix-GPT
       </span> */}
@@ -115,16 +120,6 @@ const Header = () => {
               <i class="mr-3 md:mr-1 fa-solid fa-house"></i>{" "}
               <Link to="/home">Home</Link>
             </li>
-            <li className="mr-3 p-2  duration-300 hover:text-orange-500 ">
-              <i class="mr-3 md:mr-1 fa-solid fa-tv"></i>{" "}
-              <Link to="/tvshows">TV Shows</Link>
-            </li>
-            <li className="mr-3  p-2  duration-300 hover:text-orange-500  ">
-              <i class="mr-3 md:mr-1 fa-solid fa-clapperboard"></i>Originals
-            </li>
-            <li className="mr-3 p-2  duration-300 hover:text-orange-500">
-              <i class="mr-3  md:mr-1 fa-solid fa-film"></i> My List
-            </li>
           </ul>
           ) )
           <button
@@ -138,7 +133,7 @@ const Header = () => {
             <i class="fa-solid fa-fire mr-3 md:mr-1"></i>{" "}
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
-          <p className="static md:absolute top-[26px] left-[16rem] inline text-white text-sm font-bold font-[poppins] mr-6">
+          <p className="static md:absolute top-[26px] right-[30rem] inline text-white text-sm font-bold font-[poppins] ">
             Welcome!, {user?.displayName}
           </p>
           <button
