@@ -116,7 +116,13 @@ const Header = () => {
             className={`md:flex md:bg-black md:text-[15px]  text-sm md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[4rem] left-4 bg-white md:p-1 pt-3 pb-10 px-4  cursor-pointer transition-all duration-200 ease-in-out  ${
               !showNavLinks ? "top-[5rem]" : "left-[-490px]"
             }  `}
-          ></ul>
+          >
+            <Link to={"/home"}>
+              <li className="text-xl font-medium  hover:text-orange-500">
+                Home
+              </li>
+            </Link>
+          </ul>
           ) )
           <button
             onClick={() => handleGptSearchClick()}
@@ -129,7 +135,7 @@ const Header = () => {
             <i class="fa-solid fa-fire mr-3 md:mr-1"></i>{" "}
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
-          <p className="static md:absolute top-[26px] right-[30rem] inline text-white text-sm font-bold font-[poppins] md:mr-0 mr-8 ">
+          <p className="static md:absolute top-[26px] right-[30rem] inline text-white text-sm font-bold font-[poppins] md:mr-0 mr-8y ">
             Welcome!, {user?.displayName}
           </p>
           <button

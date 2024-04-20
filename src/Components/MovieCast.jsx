@@ -9,7 +9,7 @@ const MovieCast = () => {
 
   return (
     <div className="pt-32  bg-black text-white font-[poppins] ">
-      <span className=" text-4xl ml-12 font-[400]">Top Cast</span>
+      <span className="text-orange-600 text-4xl ml-12 font-bold">Top Cast</span>
       <div className="  mt-6 mx-10 flex gap-4  overflow-x-scroll">
         {moviecast &&
           moviecast?.cast.map((item) => {

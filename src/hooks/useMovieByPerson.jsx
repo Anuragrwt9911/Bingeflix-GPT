@@ -11,7 +11,7 @@ const useMovieByPerson = (personId) => {
       API_OPTIONS
     );
     const json = await data.json();
-    dispatch(addMovieByPerson(json));
+    dispatch(addMovieByPerson(json.cast));
   };
   useEffect(() => {
     getMovieByPerson();

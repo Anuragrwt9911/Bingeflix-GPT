@@ -17,28 +17,27 @@ const MovieInfo = ({ info }) => {
   if (!info) return <Loader />;
 
   return (
-    <div className="md:top-20 top-16 relative z-30  h-full flex font-[poppins] items-center justify-between md:flex-row flex-col bg-black text-white ">
-      <div className="h-full md:w-[76rem] w-[450px] opacity-75 absolute  top-0 left-0 z--20">
+    <div className="md:top-20 top-16 relative z-30  h-full flex font-[poppins] items-center justify-evenly md:flex-row flex-col bg-black text-white ">
+      <div className="h-full md:w-full w-[450px] opacity-70 absolute  top-0 left-0 z--20">
         <img
           className=" h-full w-full rounded-md  object-cover  "
           src={BANNER_IMG_CDN_URL + info?.backdrop_path}
         />
       </div>
 
-      <div className="md:block flex justify-center items-center relative md:top-0 top-10 z-30 h-[18rem] md:h-full md:w-[42rem] w-[18rem] mr-10">
+      <div className="md:block  relative md:top-0 top-10 z-30 h-[10rem] md:h-[25rem] md:w-[30rem] w-[18rem] mx-8 ">
         <img
-          className="size-96 h-full rounded-md  object-cover mx-10 "
+          className=" rounded-md h-full   object-cover  "
           src={IMG_CDN_URL + info?.poster_path}
         />
       </div>
-      <div className="relative z-30 flex flex-col mx-10 my-10">
+      <div className="relative z-30 flex flex-col mr-10 my-10">
         <div className="my-8 flex  w-full">
           <p className="text-4xl md:text-6xl font-[600] md:font-[800]  hover:text-gray-300 cursor-default  ">
             {info?.title}
-          </p>
-          <br></br>
-          <p className="font-light text-3xl md:text-4xl ml-1 md:ml-2 py-2 ">
-            ({releaseYear}){" "}
+            <p className="inline font-light text-3xl md:text-4xl ml-1 md:ml-2 py-2 ">
+              ({releaseYear})
+            </p>
           </p>
         </div>
 
@@ -60,9 +59,9 @@ const MovieInfo = ({ info }) => {
         </div>
         <div className="flex items-center ">
           {" "}
-          {info?.genres.map((item, index) => (
+          {info?.genres.map((item) => (
             <p
-              className="mx-1  border hover:text-orange-500 cursor-default border-white rounded-full px-2 py-1 text-sm"
+              className="mx-1 font-bold border hover:text-orange-500 cursor-default border-white rounded-full px-2 py-1 text-sm"
               key={info?.id}
             >
               {item.name}
