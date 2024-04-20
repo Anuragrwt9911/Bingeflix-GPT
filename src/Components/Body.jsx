@@ -4,6 +4,7 @@ import Browse from "./Browse";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import MovieInfoContainer from "./MovieInfoContainer";
+import CastInfo from "./CastInfo";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -23,6 +24,10 @@ const Body = () => {
     {
       path: "/overview/:movieId",
       element: <MovieInfoContainer />,
+    },
+    {
+      path: "/cast/:personId",
+      element: <CastInfo />,
     },
   ]);
 
