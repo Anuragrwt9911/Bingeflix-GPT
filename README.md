@@ -8,7 +8,8 @@ Bingeflix-GPT is a cutting-edge movie information platform powered by advanced A
 
 ## Live Project
 
-Explore Bingeflix-GPT live: gleeful-toffee-1f9b6a.netlify.app
+Explore Bingeflix-GPT live: [Bingeflix-GPT Live](https://bingeflix-gpt.netlify.app/)
+
 
 ## Features
 
