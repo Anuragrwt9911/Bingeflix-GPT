@@ -2,14 +2,15 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { FIREBASE_CONFIG_API_KEY } from "./constants";
+import { FIREBASE_API_KEY } from "./constants";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: FIREBASE_CONFIG_API_KEY,
+  apiKey: FIREBASE_API_KEY,
   authDomain: "bingeflix-gpt-b8288.firebaseapp.com",
   projectId: "bingeflix-gpt-b8288",
   storageBucket: "bingeflix-gpt-b8288.appspot.com",

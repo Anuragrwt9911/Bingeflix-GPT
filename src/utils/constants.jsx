@@ -11,8 +11,7 @@ export const API_OPTIONS = {
     Authorization: "Bearer " + import.meta.env.VITE_TMDB_KEY,
   },
 };
-export const FIREBASE_CONFIG_API_KEY =
-  "AIzaSyDXNIDFn1xjzuKpGDIDGlNVM8_Kzr_qb8c";
+export const FIREBASE_API_KEY = import.meta.env.VITE_FIREBASE_CONFIG_API_KEY;
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w400";
 export const BANNER_IMG_CDN_URL = "https://image.tmdb.org/t/p/original";
