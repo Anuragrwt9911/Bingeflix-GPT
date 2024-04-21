@@ -113,34 +113,46 @@ const Header = () => {
             </select>
           )}
           <ul
-            className={`md:flex md:bg-black md:text-[15px]  text-sm md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[4rem] left-4 bg-white md:p-1 pt-3 pb-10 px-4  cursor-pointer transition-all duration-200 ease-in-out  ${
+            className={`md:flex md:bg-black md:text-[15px]  text-sm md:text-white rounded-lg text-black md:mr-8    max-w-full md:justify-between md:items-center  font-[poppins] md:static absolute top-[4rem] left-4 bg-white md:p-1 pt-3 pb-10 px-3  cursor-pointer transition-all duration-200 ease-in-out  ${
               !showNavLinks ? "top-[5rem]" : "left-[-490px]"
             }  `}
           >
             <Link to={"/home"}>
-              <li className="text-xl font-medium  hover:text-orange-500">
+              <li className="ml-2 mt-2 text-sm md:text-xl font-medium  hover:text-orange-500">
                 Home
               </li>
             </Link>
+            <button
+              onClick={() => handleGptSearchClick()}
+              className="text-sm rounded-xl md:hidden  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2  my-4"
+            >
+              {/**is showgptSearch state is true(when cilcked) the button text would be homepage and vice-versa */}
+              <i class="fa-solid fa-fire "></i>{" "}
+              {showGptSearch ? "HomePage" : "GPT Search"}
+            </button>
+            <br />
+            <button
+              onClick={() => handleSignOut()}
+              className=" text-sm rounded-xl md:hidden text-white bg-red-500  px-3 md:px-3 py-2 "
+            >
+              <i class="fa-solid fa-right-from-bracket "></i> Sign Out
+            </button>
           </ul>
           ) )
           <button
             onClick={() => handleGptSearchClick()}
-            className={`md:block  md:static absolute   text-sm rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-medium md:font-[poppins] md:font-bold mr-2 md:mr-6  transition-all duration-500 ease-in ${
-              !showNavLinks ? "top-[218px] left-7" : "hidden"
-            }
-            }  `}
+            className="hidden md:block text-sm rounded-xl  bg-yellow-500  hover:bg-yellow-600 text-white  px-3 py-2 font-medium md:font-[poppins] md:font-bold mr-2 md:mr-6  transition-all duration-500 ease-in "
           >
             {/**is showgptSearch state is true(when cilcked) the button text would be homepage and vice-versa */}
             <i class="fa-solid fa-fire mr-3 md:mr-1"></i>{" "}
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
-          <p className="static md:absolute top-[26px] right-[30rem] inline text-white text-sm font-bold font-[poppins] md:mr-0 mr-8y ">
-            Welcome!, {user?.displayName}
+          <p className="static md:absolute top-[29px] right-[30rem] inline text-white text-lg font-bold font-[poppins] md:mr-0 mr-6 ">
+            😍Welcome!, {user?.displayName}
           </p>
           <button
             onClick={() => handleSignOut()}
-            className=" inline text-sm rounded-xl text-white bg-red-500 hover:bg-red-600  px-3 md:px-4 py-2 font-medium md:font-[poppins] md:font-bold"
+            className="hidden md:inline text-sm rounded-xl text-white bg-red-500 hover:bg-red-600  px-3 md:px-4 py-2 font-medium md:font-[poppins] md:font-bold"
           >
             <i class="fa-solid fa-right-from-bracket mr-0 md:mr-1"></i> Sign Out
           </button>

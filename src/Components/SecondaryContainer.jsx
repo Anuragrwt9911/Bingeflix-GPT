@@ -1,10 +1,12 @@
 import React from "react";
 import MovieList from "./MovieList";
 import { useSelector } from "react-redux";
+import Loader from "./Loader";
 
 const SecondaryContainer = () => {
   //subsribing to the store to get our slice of movies and geting the state where we stored our all nowPlayingMovies fromt the redux store.
   const movies = useSelector((store) => store.movie);
+  if (!movies) return <Loader />;
   return (
     <div className=" w-full bg-black text-white ">
       <div className="md:-mt-52 -mt-[2rem] relative z-30">

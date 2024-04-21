@@ -17,23 +17,23 @@ const MovieInfo = ({ info }) => {
   if (!info) return <Loader />;
 
   return (
-    <div className="md:top-20 top-16 relative z-30  h-full flex font-[poppins] items-center justify-evenly md:flex-row flex-col bg-black text-white ">
-      <div className="h-full md:w-full w-[450px] opacity-70 absolute  top-0 left-0 z--20">
+    <div className="md:top-20 top-16 relative z-30  h-full flex font-[poppins] items-center justify-evenly md:flex-row flex-col bg-black text-white w-full">
+      <div className="h-full md:w-full w-full opacity-70 absolute  top-0 left-0 z--20">
         <img
           className=" h-full w-full rounded-md  object-cover  "
           src={BANNER_IMG_CDN_URL + info?.backdrop_path}
         />
       </div>
 
-      <div className="md:block  relative md:top-0 top-10 z-30 h-[10rem] md:h-[25rem] md:w-[30rem] w-[18rem] mx-8 ">
+      <div className="md:block relative md:top-2 top-10 z-30 h-[20rem] md:h-[25rem] md:min-w-[20rem] min-w-[14rem] mx-6 ">
         <img
-          className=" rounded-md h-full   object-cover  "
+          className="rounded-lg h-full  w-full object-cover md:object-contain  "
           src={IMG_CDN_URL + info?.poster_path}
         />
       </div>
-      <div className="relative z-30 flex flex-col mr-10 my-10">
+      <div className="relative z-30 md:p-0 flex flex-col justify-center md:ml-0 ml-10 mr-28 md:mr-10 my-10">
         <div className="my-8 flex  w-full">
-          <p className="text-4xl md:text-6xl font-[600] md:font-[800]  hover:text-gray-300 cursor-default  ">
+          <p className="text-3xl md:text-6xl font-[600] md:font-[800]  hover:text-gray-300 cursor-default  ">
             {info?.title}
             <p className="inline font-light text-3xl md:text-4xl ml-1 md:ml-2 py-2 ">
               ({releaseYear})

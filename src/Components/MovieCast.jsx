@@ -14,7 +14,7 @@ const MovieCast = () => {
         {moviecast &&
           moviecast?.cast.map((item) => {
             return (
-              <Link to={"/cast/" + item?.id}>
+              <Link to={"/cast/" + item?.id} key={item.id}>
                 <div
                   className="flex flex-col  cursor-pointer  min-w-[150px] items-center border border-solid border-black"
                   key={item?.id}

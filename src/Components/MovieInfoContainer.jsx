@@ -19,7 +19,7 @@ const MovieInfoContainer = () => {
   useMovieCast(movieId);
   useMovieVideos(movieId);
   return (
-    <div>
+    <div className="md:w-auto w-[46rem]">
       <Header />
       <MovieInfo info={info} />
       <MovieCast />

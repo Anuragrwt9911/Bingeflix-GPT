@@ -17,34 +17,40 @@ const CastInfo = () => {
   if (!castId) return <Loader />;
 
   return (
-    <div className="bg-black">
+    <div className="bg-black ">
       <Header />
-      <div className="mt-[80px] p-6 flex  mx-10 justify-center items-center font-[poppins]  text-white">
-        <div className=" mr-10 ">
+      <div className=" mt-[70px] md:mt-[80px] p-0 md:p-6 flex mx-6 md:mx-14 justify-center items-center font-[poppins]  text-white">
+        <div className="min-w-[8rem] mr-4 md:mr-10 ">
           <img
-            className="h-80 w-80 rounded-[50%]"
+            className="md:h-80 md:w-80 h-40 w-full rounded-[50%]"
             src={IMG_CDN_URL + castId?.profile_path}
           />
         </div>
         <div className="w-[70rem] ">
-          <p className="text-5xl text-orange-600 font-extrabold hover:opacity-80 cursor-default my-3">
+          <p className="text-3xl md:text-5xl text-orange-600 font-extrabold hover:opacity-80 cursor-default my-3">
             {castId?.name}
           </p>
 
-          <p className="mt-6">
-            <span className="font-medium text-xl">known for : </span>{" "}
+          <p className="mt-4 md:mt-6">
+            <span className="font-medium text-lg md:text-xl">known for : </span>{" "}
             {castId?.known_for_department}
           </p>
           <p className="">
-            <span className=" font-medium text-xl my-2">birthday : </span>
+            <span className=" font-medium text-lg md:text-xl my-2">
+              birthday :{" "}
+            </span>
             {castId?.birthday}
           </p>
           <p>
-            <span className="font-medium  text-xl my-2">Place of Birth : </span>
+            <span className="font-medium text-lg md:text-xl my-2">
+              Place of Birth :{" "}
+            </span>
             {castId?.place_of_birth}
           </p>
           <p>
-            <span className="font-medium  text-xl my-2">Popularity : </span>
+            <span className="font-medium text-lg md:text-xl my-2">
+              Popularity :{" "}
+            </span>
             {castId?.popularity}
           </p>
         </div>
