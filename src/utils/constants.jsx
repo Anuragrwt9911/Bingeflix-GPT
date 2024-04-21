@@ -4,6 +4,7 @@ export const LOGO =
 
 export const API_READ_ACCESS_TOKEN =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYmQ4NTMwODY3ZGMyNjUwNThmYTQxYjYyZDkwOWQ0OCIsInN1YiI6IjY1ZmQ4NTJmMDQ3MzNmMDE3ZGVhY2JhZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HkxkikkeBzKSORVwr4eCxhSMmZXvMGi7OSjuo_hh7G4";
+
 export const API_OPTIONS = {
   method: "GET",
   headers: {
@@ -11,6 +12,7 @@ export const API_OPTIONS = {
     Authorization: "Bearer " + import.meta.env.VITE_TMDB_KEY,
   },
 };
+
 export const FIREBASE_API_KEY = import.meta.env.VITE_FIREBASE_CONFIG_API_KEY;
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w400";
