@@ -1,6 +1,6 @@
 # 🎬🚀 Introducing Bingeflix-GPT - Your Partner in enjoyment when watching binge movies all days long😁! 🌟🍿
 
-![MadflixGPT](./src/assets/MadflixGPT.png)
+![Bingeflix-GPT](./src/assets/Bingeflix-GPT.png)
 
 ## Overview
 
