@@ -61,7 +61,7 @@ const MovieInfo = ({ info }) => {
           {" "}
           {info?.genres.map((item) => (
             <p
-              className="mx-1 font-bold border hover:text-orange-500 cursor-default border-white rounded-full px-2 py-1 text-sm"
+              className="mx-1 font-bold border hover:text-orange-500 duration-500 cursor-default border-white rounded-full px-2 py-1 text-sm"
               key={info?.id}
             >
               {item.name}

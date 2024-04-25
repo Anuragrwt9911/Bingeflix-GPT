@@ -16,7 +16,7 @@ const MovieList = ({ title, movies }) => {
   };
 
   return (
-    <div className="mx-4 w-full md:px-6 px-2 text-white ">
+    <div className=" w-full md:px-6 px-2 text-white ">
       <h1 className="cursor-default md:text-3xl md:font-bold font-[poppins]  text-xl font-bold text-orange-600 md:my-4 my-1">
         {title}
       </h1>
@@ -35,7 +35,7 @@ const MovieList = ({ title, movies }) => {
               </Link>
             ))}
           <div
-            className="hidden group-hover:hidden md:group-hover:block left-4 right-10 top-[30%] text-white
+            className="hidden group-hover:hidden md:group-hover:block left-4 right-10 top-[30%]
            w-full absolute z-40  "
           >
             <button
@@ -51,7 +51,6 @@ const MovieList = ({ title, movies }) => {
               <i class="fa-solid fa-angle-right"></i>
             </button>
           </div>
-          ) )
         </div>
       </div>
     </div>

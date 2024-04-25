@@ -9,6 +9,7 @@ import { addUser } from "../utils/userSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -87,7 +88,7 @@ const Header = () => {
         alt="logo"
       />
       <p className="md:block hidden absolute left-10 top-[55px] cursor-default font-bold text-[13px] font-[poppins] text-white">
-        Bingeflix-GPT
+        <span className="text-red-500">Bingeflix</span>-GPT
       </p>
       {/* <span className="absolute top-10 left-[36px] text-white font-[poppins] text-3xl font-[600]">
         BingleFlix-GPT
@@ -105,7 +106,7 @@ const Header = () => {
                 <option
                   className="md:p-1 rounded-lg"
                   key={lang.identifier}
-                  value={lang.name}
+                  value={lang.identifier}
                 >
                   {lang.name}
                 </option>
@@ -147,12 +148,12 @@ const Header = () => {
             <i class="fa-solid fa-fire mr-3 md:mr-1"></i>{" "}
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
-          <p className="static md:absolute top-[29px] right-[30rem] inline text-white text-lg font-bold font-[poppins] md:mr-0 mr-6 ">
+          <p className="static md:absolute top-[29px] right-[36rem] inline text-white text-lg font-bold font-[poppins] md:mr-0 mr-6 hover:text-orange-500 duration-500 ">
             😍Welcome!, {user?.displayName}
           </p>
           <button
             onClick={() => handleSignOut()}
-            className="hidden md:inline text-sm rounded-xl text-white bg-red-500 hover:bg-red-600  px-3 md:px-4 py-2 font-medium md:font-[poppins] md:font-bold"
+            className="hidden md:inline text-sm rounded-xl text-white bg-red-500 hover:bg-red-600  duration-500 px-3 md:px-4 py-2 font-medium md:font-[poppins] md:font-bold"
           >
             <i class="fa-solid fa-right-from-bracket mr-0 md:mr-1"></i> Sign Out
           </button>

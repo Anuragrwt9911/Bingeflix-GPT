@@ -19,7 +19,7 @@ const CastInfo = () => {
   return (
     <div className="bg-black ">
       <Header />
-      <div className=" mt-[70px] md:mt-[80px] p-0 md:p-6 flex mx-6 md:mx-14 justify-center items-center font-[poppins]  text-white">
+      <div className=" mt-[70px] md:mt-[80px] p-0 md:p-6 flex mx-6 md:mx-14 justify-center items-center font-[poppins]  text-white text-lg">
         <div className="min-w-[8rem] mr-4 md:mr-10 ">
           <img
             className="md:h-80 md:w-80 h-40 w-full rounded-[50%]"
